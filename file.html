@@ -1,0 +1,185 @@
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="flexbox.css">
+    <style>
+        nav>h1,blockquote>h1{
+            color: green;
+            font-size:xx-large;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            /* margin-left: 1.2em; */
+        }
+        span{
+            color:rgb(193, 82, 57);
+        }
+        nav{
+            background-color: rgba(18, 5, 31, 0.99);
+        }
+        nav{
+            width: 100%;
+            height: 5em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap:wrap;
+            position:fixed;
+        }
+        button{
+            width: 90px;
+            height: 50px;
+            font-weight: bolder;
+            border-radius: 20px;
+            background-color: brown;
+            color: aliceblue;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button:hover{
+            background-color: aquamarine;
+            color: black;
+            font-weight: bolder;
+        }
+        h1+ul>li{
+            display: inline-block;
+            list-style: none;
+            color: aquamarine;
+            margin-right: 5em;
+        }
+        body{
+            background-image: url("https://th.bing.com/th/id/R.2cdcb3c00b50a76ef75bae411b61dc21?rik=0qGjti8wlj0hdw&riu=http%3a%2f%2fready2code.com%2fwp-content%2fuploads%2f2016%2f07%2ftech-background-image-2-1.jpg&ehk=AzbmoSdW2%2fdHdpOZ2pkaxCgfNypt1yp1t5Sl%2bHnGMR8%3d&risl=&pid=ImgRaw&r=0");
+            image-resolution: 10%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1~button{
+            margin-right: 1.2em;
+        }
+        li{
+            color: azure;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: larger;
+            font-weight: bolder;
+            font-style: normal;
+        }
+    </style>
+    <script>
+        var l=["Pavan","Sriprada","Guru","Vinayak"];
+        var pass=["001","002","003","004"];
+        var gender=["Male","Male","Male","Male"];
+        function fun(){
+            var a=document.getElementById('name').value,b=document.getElementById('Password').value,c=document.getElementById('gender').value;
+            for (let j = 0; j < l.length; j++) {
+                if(a==l[j]){
+                        document.getElementById('res').innerHTML=null;
+                        if(b==pass[j]){
+                            if(gender[j]=="female"){
+                                document.getElementById('h1').setAttribute("style","visibility:visible; background:rgba(0,0,0,0.5); color:pink; font-family: Copperplate Gothic Light;");
+                                document.getElementById('h1').innerHTML=`Welcome Ms.${a}`;
+                                break;
+                            }
+                            else{
+                                document.getElementById('h1').setAttribute("style","visibility:visible; background:rgba(0,0,0,0.5); color:pink; font-family: Copperplate Gothic Light;");
+                                document.getElementById('h1').innerHTML=`Welcome Mr.${a}`; 
+                                break;
+                            }
+                        }
+                        else{
+                            document.getElementById('res').innerHTML="Invalid Password!!! Enter again";
+                        }
+                }
+                else{
+                    document.getElementById('h1').innerHTML=null;
+                    document.getElementById('res').innerHTML="Invalid User, Please Register";
+                }
+            }
+            document.getElementById('name').value=null;
+            document.getElementById('Password').value=null;
+        }
+        function append(){
+            document.getElementsByClassName('register')[0].setAttribute("style","visibility:visible;");
+
+        }
+         function append2(){
+            var i=document.getElementById('name2').value;
+            var j=document.getElementById('Password2').value;
+            var k=document.getElementById('gender').value;
+            if(Boolean(i)==true && Boolean(j)==true){
+                document.getElementById('reg').innerHTML="Your Registered";
+                l.push(i);
+                pass.push(j);
+                gender.push(k);
+            }
+            document.getElementById('name2').value=null;
+            document.getElementById('Password2').value=null;
+            document.getElementById('gender').value=null;
+            document.getElementById('E-mail').value=null;
+            console.log(l);
+            console.log(pass);
+         }
+    </script>
+</head>
+<body>
+    <nav>
+        <h1><span>Pavan</span>Softwares</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+        <button id="register" onclick="append()">Rigister</button>
+    </nav>
+    <section style="width: 60%; float: left; text-align: center;">
+        <article>
+            <blockquote>
+                <br><br><br><br><br><h1 id="h1" style="width: 30em;line-height: 4em; color: rgb(13, 197, 53); margin-left: 1.4em; background-color:rgba(115, 83, 42,0.5); font-family: Copperplate Gothic Light;">Heartly Welcome🙏🙏 to  <span style="font-family:font-family: Copperplate Gothic Light;font-size: xx-large;"><b style="color:rgb(253, 91, 124);border:1px rgb(240, 213, 14) dotted;border-top-left-radius: 20px; padding: 0.5em;">PavanSoftwares</b></span></h1>
+                <br><br><br><br><br><br><br><br><h1 style="font-size: xx-large; font-family: 'Courier New', Courier, monospace; font-weight: bolder; color: blue; position:relative;"><strong>Services We are offering are </strong></h1><br><br>
+                <br><ol style="position:sticky;">
+                    <li><a href="https://www.bing.com/aclk?ld=e8xxUOVA4WEyK3WLJx8EnrIjVUCUzGMiHrvLQBeeqpaAmQnaF-Z2ccS_U9mMm7UIggG63XUZMwaEZGE3qP2nj2tkodCrwZzGlgBRaBcnaaJEFX_tlnoLbi4CmwWQbS4gF9ZP2b_eTs7MGXkEMG3wwX-_v4iJuzQsK8Kdn9ndMF1DAa6GWKOXy2_ND8I1zXBiAWRJdarA&u=aHR0cHMlM2ElMmYlMmZ3d3cud2l4LmNvbSUyZmh0bWw1ZW4lMmZpbi1oaWtlci1kZXNpZ24lM2Z1dG1fc291cmNlJTNkYmluZyUyNnV0bV9tZWRpdW0lM2RjcGMlMjZ1dG1fY2FtcGFpZ24lM2Rtc19lbl9pbmRpYV9lX2NwY19hcHIyMiU1ZWRlc2lnbl9ob3clMjZleHBlcmltZW50X2lkJTNkd2ViJTI1MjBkZXNpZ24lMjUyMGhvdyUyNTIwdG8lNWViZSU1ZTc5MzAyNDYyNjgxOTE3JTVld2ViZGVzaWduJTI2bXNjbGtpZCUzZDE4ZGY2ZWM3YTYxNDEwMmI4OWI1MGNiMWNlMjVhYzYy&rlid=18df6ec7a614102b89b50cb1ce25ac62&ntb=1">Web Design</a></li><br>
+                    <li>Software Services</li><br>
+                    <li>App Development</li><br>
+                    <li>Training Services</li><br>
+                    <li>Consultancy Services</li>
+                </ol>
+            </blockquote>
+        </article>
+    </section>
+    <aside style="width: 23%; height: 55%;">
+        <br><h2 style="border-bottom: 0.5em rgb(2, 0, 11) solid; color: rgb(246, 77, 39); font-family:'Courier New', Courier, monospace;">Login</h2><br><br><br>
+        <label for="name" style="font-size: larger; color: aquamarine;font-family: 'Courier New', Courier, monospace;">User Name :</label>
+        <input id="name" type="text" placeholder="Enter Your Name" style="background-color: rgb(223, 217, 100); font-weight: bolder; color: rgb(79, 54, 218); width: 170px; height: 30px; text-align: center;" required><br><br><br>
+        <label for="Password" style="font-size: larger; color: aquamarine;font-family: 'Courier New', Courier, monospace;">Password :</label>
+        <input id="Password" type="password" placeholder="Enter Password" style="background-color: rgb(223, 217, 100); font-weight: bolder; color: rgb(79, 54, 218); width: 170px; height: 30px;text-align: center;" required><br><br><br><br>
+        <br><button type="submit" style="background-color: rgb(121, 221, 221); color: black; width: 100px; height: 40px;font-weight: bolder; font-size: larger; border-radius: 10px;" onclick="fun()">SUBMIT</button>
+        <br><br><p id="res" style="color: red; font-size: large; font-family: 'Courier New', Courier, monospace;font-weight: bold; text-align: center;"></p>
+    </aside>
+    <div class="register" style="visibility:collapse;">
+        <aside>
+            <form>
+            <br><h2 style="color: rgba(233, 216, 163, 0.91); text-align: center;">Register</h2><br><br>
+            <label for="name2">Name  :</label><br>
+            <input id="name2" style="font-size: larger; font-weight: bolder; color: rgb(1, 1, 1);font-family: 'Courier New', Courier, monospace;" type="text" placeholder="Enter Your Name" required><br><br><br>
+            <label for="E-mail">E-mail Id  :</label><br>
+            <input id="E-mail" style="font-size: larger; font-weight: bolder; color: rgb(19, 19, 19);font-family: 'Courier New', Courier, monospace;" type="email" placeholder="Enter E-mail Id"><br><br><br>
+            <label for="Password2">Set Password  :</label><br>
+            <input id="Password2" style="font-size: larger; font-weight: bolder; color: rgb(11, 11, 11);font-family: 'Courier New', Courier, monospace;" type="password" placeholder="Enter Password" required><br>
+            <br><br><p id="reg" style="color: rgb(28, 255, 69); font-size: large; font-family: 'Courier New', Courier, monospace;font-weight: bold; text-align: center;"></p>
+            <label for="gender">Gender :</label><br>
+            <select name="gender" id="gender" style="font-size: larger; font-weight: bolder; height:1.5em;color: rgb(1, 1, 1);width:12em;font-family: 'Courier New', Courier, monospace;" type="select" required>
+                <option value="Choose Gender">Choose Gender</option>
+                <option value="Male">Male</option>
+                <option value="female">female</option>
+            </select> 
+            </form>
+            <br><br><button type="submit" style="background-color: rgb(165, 240, 27); color: black; width: 12em; height: 40px;font-weight: bolder; font-size: larger; border-radius: 10px;" onclick="append2()">Register</button>
+            <br><br><button style="background-color: rgb(240, 84, 18); color: black; width: 9em; height: 40px;font-weight: bolder; font-size: larger; border-radius: 10px;" onclick=document.getElementsByClassName('register')[0].setAttribute("style","visibility:collapse;")>Close</button>
+        </aside>
+    </div>
+    <div class="footerhead"><footer style="width: 100%;">
+        <h4 class="footer">@Copyright Pavansoftware sollutions</h4>
+    </footer></div>
+</body>
+</html>
